@@ -13,13 +13,13 @@ mimetypes.add_type("image/webp", ".webp")
 
 app = FastAPI()
 
-# Serve / -> ./public (index.html, assets)
-app.mount("/", StaticFiles(directory="public", html=True), name="static")
-
 # Health
 @app.get("/healthz", response_class=PlainTextResponse)
 def health():
     return "ok"
+
+# Serve / -> ./public (index.html, assets)
+app.mount("/", StaticFiles(directory="public", html=True), name="static")
 
 # Cache + range headers for large binaries
 class StaticHeadersMiddleware(BaseHTTPMiddleware):
