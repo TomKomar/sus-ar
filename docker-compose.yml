@@ -1,0 +1,30 @@
+version: "3.9"
+
+services:
+  app:
+    build: ./app
+    expose:
+      - "8000"
+    # mount paths that both instances need
+    volumes:
+      - ./app/public:/app/public:ro
+    networks: [webnet]
+    # good to have:
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:8000/health || exit 1"]
+      interval: 10s
+      timeout: 2s
+      retries: 3
+
+  nginx:
+    image: nginx:1.27-alpine
+    depends_on:
+      - app
+    ports:
+      - "8080:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    networks: [webnet]
+
+networks:
+  webnet:

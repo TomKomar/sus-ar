@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 3,
+  "coordSpace": "position+orbit",
+  "units": "meters",
+  "views": [
+{
+  "id": "bench1",
+  "label": "bench1",
+  "position": [
+    23.558288,
+    0.8099,
+    3.906428
+  ],
+  "orbit": "26.067deg 92.791deg 38.647371m",
+  "fov": "90"
+},
+{
+  "id": "bench2",
+  "label": "bench2",
+  "position": [
+    -101.203977,
+    8.844061,
+    -34.222745
+  ],
+  "orbit": "165.971deg 79.551deg 71.574912m",
+  "fov": "90"
+},
+    {
+  "id": "bench2b",
+  "label": "bench2b",
+  "position": [
+    -35.798969,
+    -2.221399,
+    -61.490453
+  ],
+  "orbit": "208.660deg 79.765deg 0.542278m",
+  "fov": "120"
+},
+  {
+  "id": "all",
+  "label": "all",
+  "position": [
+    -174.613501,
+    126.215804,
+    32.45572
+  ],
+  "orbit": "157.286deg 52.243deg 214.836019m",
+  "fov": "90"
+}
+  ]
+}
