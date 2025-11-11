@@ -1,0 +1,28 @@
+{
+  "serviceName": "sus-ar-service",
+  "containers": {
+    "app": {
+      "image": ":sus-ar-service.app.1",
+      "ports": {
+        "8000": "HTTP"
+      }
+    },
+    "nginx": {
+      "image": ":sus-ar-service.nginx.1",
+      "ports": {
+        "80": "HTTP"
+      }
+    }
+  },
+  "publicEndpoint": {
+    "containerName": "nginx",
+    "containerPort": 80,
+    "healthCheck": {
+      "path": "/",
+      "intervalSeconds": 10,
+      "timeoutSeconds": 5,
+      "healthyThreshold": 2,
+      "unhealthyThreshold": 2
+    }
+  }
+}
